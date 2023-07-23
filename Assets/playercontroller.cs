@@ -19,10 +19,10 @@ public class playercontroller : MonoBehaviour
     public AudioSource[] sesler;
     public CinemachineVirtualCamera[] cameras;
     public GameObject karakter;
-
+    float movementspeed;
     void Start()
     {
-
+        movementspeed = 0.03f;
         puantexsayi = 0;
         kalkan = false;
         canmove = false;
@@ -35,6 +35,7 @@ public class playercontroller : MonoBehaviour
 
     void Update()
     {
+        
         duzgit1();
         geri1();
         zipla1();
@@ -77,7 +78,7 @@ public class playercontroller : MonoBehaviour
             noofclicks1 = 0;
         }
     }
-    public float movementspeed;
+    
     public float jumppower;
     public Animator anim;
     public bool canmove;
@@ -95,7 +96,6 @@ public class playercontroller : MonoBehaviour
     public static int noofclicks1 = 0;
     float lastclickedtime1 = 0;
     float maxcombodelay1 = 1;
-    int sayi = 0;
     int sayi1 = 1;
     int puantexsayi;
     Random random = new Random();
@@ -189,11 +189,12 @@ public class playercontroller : MonoBehaviour
     }
     public void ileri()
     {
-        
-        duzgit= true;
+        movementspeed = 0.03f;
+        duzgit = true;
     }
     public void ileridurdur()
     {
+        movementspeed = 0.03f;
         anim.Play("idle");
         duzgit = false;
     }
@@ -343,8 +344,8 @@ public class playercontroller : MonoBehaviour
     }
     public void anamenudon()
     {
-        
-        SceneManager.LoadScene(sayi);
+
+        Application.Quit();
         
 
     }

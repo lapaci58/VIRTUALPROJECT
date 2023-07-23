@@ -11,15 +11,9 @@ public class cozunurlk : MonoBehaviour
     void Start()
     {
 
-        StartCoroutine(geber());
-
-    }
-    IEnumerator geber()
-    {
         Screen.SetResolution(Screen.currentResolution.width / 3, Screen.currentResolution.height / 3, true);
         bomboms.SetActive(false);
         cozunurlk.Destroy(this);
-        yield return new WaitForSecondsRealtime(1);
-        
+
     }
 }
